@@ -1,13 +1,6 @@
-// const response = {
-//     "pokedata": [
-//         {"Name":"Adam Abramczyk","Goals":"21","Assists":"14","YellowCards":"0","RedCards":"0","MOTMS":"1"},
-//         {"Name":"Artur Abramczyk","Goals":"5","Assists":"3","YellowCards":"1","RedCards":"0","MOTMS":"0"}
-//      ]
-//  }
 const endpointUrl =
   "https://ligabemowskafunctionsapp.azurewebsites.net/api/GetAllPlayers?";
 
-//var response;
 var tableContent;
 var tableButtons;
 
