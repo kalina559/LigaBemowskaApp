@@ -10,7 +10,15 @@ const createRow = (obj) => {
   objKeys.map((key) => {
     const cell = document.createElement("td");
     cell.setAttribute("data-attr", key);
-    cell.innerHTML = obj[key];
+
+    // Check if the key is "LastUpdated" and format it using Day.js
+    if (key === "Timestamp") {
+      const formattedDate = dayjs(obj[key]).format("YYYY-MM-DD HH:mm:ss");
+      cell.innerHTML = formattedDate;
+    } else {
+      cell.innerHTML = obj[key];
+    }
+
     row.appendChild(cell);
   });
   return row;
