@@ -4,8 +4,14 @@ const endpointUrl =
 var tableContent;
 var tableButtons;
 
-const createRow = (obj) => {
+const createRow = (obj, index) => {
   const row = document.createElement("tr");
+
+  // Create a cell for the row number
+  const numberCell = document.createElement("td");
+  numberCell.innerHTML = index + 1; // Row number starts from 1
+  row.appendChild(numberCell);
+
   const objKeys = Object.keys(obj);
   objKeys.map((key) => {
     const cell = document.createElement("td");
@@ -25,8 +31,8 @@ const createRow = (obj) => {
 };
 
 const getTableContent = (data) => {
-  data.map((obj) => {
-    const row = createRow(obj);
+  data.map((obj, index) => {
+    const row = createRow(obj, index);
     tableContent.appendChild(row);
   });
 };
